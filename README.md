@@ -112,13 +112,13 @@ The dataset source is provided in **datasetlink.txt**.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/ChurnShield.git
+git clone https://github.com/Sayan156/Churn-Shield-Project.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd ChurnShield
+cd Churn-Shield-Project
 ```
 
 Install the dependencies:
@@ -132,6 +132,31 @@ Run the Streamlit application:
 ```bash
 streamlit run app.py
 ```
+
+---
+---
+
+## 🖥️ Application Features
+
+The Streamlit application provides multiple ways to analyze customer churn:
+
+### 🔹 Multiple Model Prediction
+
+Users can select from different trained machine learning models to compare predictions and evaluate their performance.
+
+### 🔹 Individual Customer Prediction with SHAP Explanation
+
+Predict the churn probability for a single customer by entering customer details through the web interface. The application also generates **SHAP explanations** to show how each feature influenced the prediction, making the model's decisions transparent and interpretable.
+
+### 🔹 Batch Prediction
+
+Upload a CSV file containing multiple customer records in the required format to perform bulk churn prediction.
+
+The application automatically:
+- Predicts churn for every customer
+- Displays the prediction results
+- Allows users to download the predictions as a CSV file
+- Preserves the original customer data along with the predicted churn labels
 
 ---
 
