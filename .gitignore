@@ -1,0 +1,65 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ==========================
+# Virtual Environments
+# ==========================
+venv56/
+.venv/
+env/
+ENV/
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# Ignore ANN experiment notebook
+churnshield_ann.ipynb
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# Operating System Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Python Packaging
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+
+# ==========================
+# Streamlit Cache
+# ==========================
+.streamlit/cache/
+
+# ==========================
+# Miscellaneous
+# ==========================
+*.tmp
+*.bak
+*.png
+catboost_info/

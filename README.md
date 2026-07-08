@@ -1,0 +1,154 @@
+# ChurnShield - Customer Retention (Churn) Analysis System
+
+ChurnShield is a Machine Learning-based customer churn prediction system developed to identify customers who are likely to leave a business. The project combines multiple machine learning algorithms using a **Stacking Classifier** to improve prediction performance and provides an interactive **Streamlit** web application for real-time churn prediction.
+
+The project also focuses on **threshold optimization**, **class imbalance handling**, and **Explainable AI (XAI)** using **SHAP** to make the model more reliable and interpretable.
+
+---
+
+## 🚀 Features
+
+- Predict customer churn using an ensemble **Stacking Classifier**
+- Achieved **94.47% Recall** on the churn class
+- Optimized classification thresholds using Precision-Recall analysis
+- Addressed class imbalance to improve minority class prediction
+- Explainable AI using **SHAP (SHapley Additive Explanations)**
+- Interactive web interface built with **Streamlit**
+- Model serialization using **Cloudpickle**
+
+---
+
+## 📊 Project Workflow
+
+1. Data Cleaning & Preprocessing
+2. Exploratory Data Analysis (EDA)
+3. Feature Engineering
+4. Handling Class Imbalance
+5. Training Multiple Machine Learning Models
+6. Building a Stacking Classifier
+7. Threshold Optimization
+8. Model Evaluation
+9. SHAP Explainability
+10. Streamlit Deployment
+
+---
+
+## 📁 Project Structure
+
+```
+ChurnShield/
+│
+├── app.py                          # Streamlit web application
+├── requirements.txt                # Required Python packages
+├── BankChurners.csv                # Dataset
+├── churnshield.ipynb               # Exploratory Data Analysis (EDA)
+├── churn_shield_model_final.ipynb  # Model training, evaluation and saving
+├── datasetlink.txt                 # Dataset source
+└── README.md
+```
+
+---
+
+## 📒 Notebook Description
+
+### churnshield.ipynb
+
+This notebook is dedicated to:
+
+- Exploratory Data Analysis (EDA)
+- Understanding feature distributions
+- Data visualization
+- Dataset exploration
+
+### churn_shield_model_final.ipynb
+
+This notebook contains the complete Machine Learning pipeline:
+
+- Data preprocessing
+- Class imbalance handling
+- Training multiple machine learning models
+- Building the Stacking Classifier
+- Threshold optimization
+- Model evaluation
+- SHAP explainability
+- Saving the trained model using Cloudpickle
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Scikit-learn
+- Pandas
+- NumPy
+- Streamlit
+- SHAP
+- Matplotlib
+- Cloudpickle
+
+---
+
+## 📈 Model Highlights
+
+- **Ensemble Method:** Stacking Classifier
+- **Primary Evaluation Metric:** Recall
+- **Recall Achieved:** **94.47%**
+- Threshold optimized using Precision-Recall analysis
+- Class imbalance handled during training
+- SHAP used for feature importance and model interpretation
+
+---
+
+## 📂 Dataset
+
+The project uses the **BankChurners** dataset.
+
+The dataset source is provided in **datasetlink.txt**.
+
+---
+
+## ▶️ Running the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/ChurnShield.git
+```
+
+Move into the project directory:
+
+```bash
+cd ChurnShield
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 🎯 Future Improvements
+
+- Hyperparameter optimization
+- Deep Learning-based churn prediction
+- Interactive SHAP visualizations within the Streamlit application
+- Docker containerization
+- Cloud deployment with CI/CD
+
+---
+
+## 👨‍💻 Author
+
+**Sayan Bhattacharyya**
+
+B.Tech in Computer Science & Engineering
+
+Machine Learning | Data Science | Software Development
