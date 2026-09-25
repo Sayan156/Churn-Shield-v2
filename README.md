@@ -1,176 +1,81 @@
-# ChurnShield - Customer Retention (Churn) Analysis System
+# ChurnShield — Customer Retention Intelligence
 
-ChurnShield is a Machine Learning-based customer churn prediction system developed to identify customers who are likely to leave a business. The project combines multiple machine learning algorithms using a **Stacking Classifier** to improve prediction performance and provides an interactive **Streamlit** web application for real-time churn prediction.
+ChurnShield is a machine-learning customer churn prediction system that identifies customers who are likely to leave. It combines multiple trained models, threshold optimization, class-imbalance handling, and SHAP explainability in a React-based web application.
 
-The project also focuses on **threshold optimization**, **class imbalance handling**, and **Explainable AI (XAI)** using **SHAP** to make the model more reliable and interpretable.
+## Features
 
----
+- Compare predictions from the stacking logistic regression, stacking XGBoost, and XGBoost models
+- View churn probabilities and threshold-based predictions
+- Generate SHAP explanations for individual customer predictions
+- Upload a CSV file for batch scoring and download the results
+- Use a responsive React dashboard with light and dark themes
+- Serve predictions through a FastAPI backend
 
-## 🚀 Features
+## Project workflow
 
-- Predict customer churn using an ensemble **Stacking Classifier**
-- Achieved **94.47% Recall** on the churn class
-- Optimized classification thresholds using Precision-Recall analysis
-- Addressed class imbalance to improve minority class prediction
-- Explainable AI using **SHAP (SHapley Additive Explanations)**
-- Interactive web interface built with **Streamlit**
-- Model serialization using **Cloudpickle**
+1. Data cleaning and preprocessing
+2. Exploratory data analysis
+3. Feature engineering
+4. Class-imbalance handling
+5. Model training
+6. Stacking and threshold optimization
+7. Model evaluation
+8. SHAP explainability
+9. FastAPI and React deployment
 
----
+## Project structure
 
-## 📊 Project Workflow
-
-1. Data Cleaning & Preprocessing
-2. Exploratory Data Analysis (EDA)
-3. Feature Engineering
-4. Handling Class Imbalance
-5. Training Multiple Machine Learning Models
-6. Building a Stacking Classifier
-7. Threshold Optimization
-8. Model Evaluation
-9. SHAP Explainability
-10. Streamlit Deployment
-
----
-
-## 📁 Project Structure
-
-```
+```text
 ChurnShield/
-│
-├── app.py                          # Streamlit web application
-├── requirements.txt                # Required Python packages
-├── BankChurners.csv                # Dataset
-├── churnshield.ipynb               # Exploratory Data Analysis (EDA)
-├── churn_shield_model_final.ipynb  # Model training, evaluation and saving
-├── datasetlink.txt                 # Dataset source
+├── client/                        # React + Vite frontend
+│   ├── src/                       # React components and styles
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.mjs
+├── models/                        # Trained models and metadata
+├── main.py                        # FastAPI prediction API
+├── requirements.txt               # Python dependencies
+├── BankChurners.csv               # Dataset
+├── churnshield.ipynb              # Exploratory data analysis
+├── churn_shield_model_final.ipynb # Model training and evaluation
+├── churnshield_ann.ipynb          # Additional model experiments
+├── datasetlink.txt                # Dataset source
 └── README.md
 ```
 
----
+## Machine-learning notebooks
 
-## 📒 Notebook Description
+`churnshield.ipynb` covers exploratory data analysis and dataset exploration.
 
-### churnshield.ipynb
+`churn_shield_model_final.ipynb` contains the main preprocessing, model training, threshold optimization, evaluation, SHAP analysis, and model-saving workflow.
 
-This notebook is dedicated to:
+`churnshield_ann.ipynb` contains additional artificial neural network experiments.
 
-- Exploratory Data Analysis (EDA)
-- Understanding feature distributions
-- Data visualization
-- Dataset exploration
+## Technologies
 
-### churn_shield_model_final.ipynb
+- Python, Pandas, NumPy, scikit-learn, XGBoost, CatBoost
+- SHAP for explainability
+- FastAPI and Uvicorn for the backend API
+- React and Vite for the frontend
+- Cloudpickle for model serialization
 
-This notebook contains the complete Machine Learning pipeline:
+## Running the application
 
-- Data preprocessing
-- Class imbalance handling
-- Training multiple machine learning models
-- Building the Stacking Classifier
-- Threshold optimization
-- Model evaluation
-- SHAP explainability
-- Saving the trained model using Cloudpickle
-
----
-
-## 🛠️ Technologies Used
-
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Streamlit
-- SHAP
-- Matplotlib
-- Cloudpickle
-
----
-
-## 📈 Model Highlights
-
-- **Ensemble Method:** Stacking Classifier
-- **Primary Evaluation Metric:** Recall
-- **Recall Achieved:** **94.47%**
-- Threshold optimized using Precision-Recall analysis
-- Class imbalance handled during training
-- SHAP used for feature importance and model interpretation
-
----
-
-## 📂 Dataset
-
-The project uses the **BankChurners** dataset.
-
-The dataset source is provided in **datasetlink.txt**.
-
----
-
-## ▶️ Running the Project
-
-Clone the repository:
+Clone the repository and install the backend dependencies:
 
 ```bash
 git clone https://github.com/Sayan156/Churn-Shield-Project.git
-```
-
-Move into the project directory:
-
-```bash
 cd Churn-Shield-Project
-```
-
-Install the dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
-Run the Streamlit application:
-
-```bash
-streamlit run app.py
-```
-
----
----
-
-## 🖥️ Application Features
-
-The Streamlit application provides multiple ways to analyze customer churn:
-
-### 🔹 Multiple Model Prediction
-
-Users can select from different trained machine learning models to compare predictions and evaluate their performance.
-
-### 🔹 Individual Customer Prediction with SHAP Explanation
-
-Predict the churn probability for a single customer by entering customer details through the web interface. The application also generates **SHAP explanations** to show how each feature influenced the prediction, making the model's decisions transparent and interpretable.
-
-### 🔹 Batch Prediction
-
-Upload a CSV file containing multiple customer records in the required format to perform bulk churn prediction.
-
-The application automatically:
-- Predicts churn for every customer
-- Displays the prediction results
-- Allows users to download the predictions as a CSV file
-- Preserves the original customer data along with the predicted churn labels
-
----
-
-## ⚡ React + FastAPI website
-
-The new website uses the trained models through `main.py` and supports single-customer comparison, SHAP explanations, CSV batch scoring, and the model benchmark page.
-
-Start the API:
+Start the FastAPI backend:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-In a second terminal, start the React client:
+In a second terminal, install and start the React client:
 
 ```bash
 cd client
@@ -178,22 +83,37 @@ npm install
 npm run dev
 ```
 
-The client defaults to `http://127.0.0.1:8000`. Set `VITE_API_URL` when the API is hosted elsewhere.
+The Vite development server proxies `/api` requests to the backend. The client uses `http://127.0.0.1:8000` when an API URL is not otherwise configured. Set `VITE_API_URL` if the backend is hosted elsewhere.
 
-## 🎯 Future Improvements
+## API capabilities
+
+- `GET /health` — API and model health check
+- `GET /meta` — model metadata and input feature definitions
+- `POST /predict/compare` — compare all available models for one customer
+- `POST /predict/{model_key}` — run one selected model
+- `POST /batch` — score a CSV file
+- `POST /explain` — generate a SHAP explanation
+
+## Model highlights
+
+- Ensemble-based churn prediction using stacking models
+- Recall-focused threshold optimization
+- Reported churn recall of 94.47% in the training workflow
+- SHAP-based feature impact explanations
+
+## Dataset
+
+The project uses the `BankChurners` dataset. Its source is listed in `datasetlink.txt`.
+
+## Future improvements
 
 - Hyperparameter optimization
-- Deep Learning-based churn prediction
-- Interactive SHAP visualizations within the Streamlit application
+- Deep-learning model integration
 - Docker containerization
 - Cloud deployment with CI/CD
 
----
-
-## 👨‍💻 Author
+## Author
 
 **Sayan Bhattacharyya**
 
 B.Tech in Computer Science & Engineering
-
-Machine Learning | Data Science | Software Development

@@ -51,11 +51,6 @@ dist/
 .env
 
 # ==========================
-# Streamlit Cache
-# ==========================
-.streamlit/cache/
-
-# ==========================
 # Miscellaneous
 # ==========================
 *.tmp
@@ -64,4 +59,3 @@ dist/
 catboost_info/
 # React build dependencies
 node_modules/
-
