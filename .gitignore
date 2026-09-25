@@ -19,8 +19,7 @@ ENV/
 # ==========================
 .ipynb_checkpoints/
 
-# Ignore ANN experiment notebook
-churnshield_ann.ipynb
+
 
 # ==========================
 # IDE
@@ -63,3 +62,6 @@ dist/
 *.bak
 *.png
 catboost_info/
+# React build dependencies
+node_modules/
+

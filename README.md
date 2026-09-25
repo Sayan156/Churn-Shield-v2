@@ -160,6 +160,26 @@ The application automatically:
 
 ---
 
+## ⚡ React + FastAPI website
+
+The new website uses the trained models through `main.py` and supports single-customer comparison, SHAP explanations, CSV batch scoring, and the model benchmark page.
+
+Start the API:
+
+```bash
+uvicorn main:app --reload
+```
+
+In a second terminal, start the React client:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+The client defaults to `http://127.0.0.1:8000`. Set `VITE_API_URL` when the API is hosted elsewhere.
+
 ## 🎯 Future Improvements
 
 - Hyperparameter optimization
